@@ -7,6 +7,7 @@
     'depends': ['base'],
     'application': True,
     'data': [
-        'views/book_views.xml'
+        'views/book_views.xml',
+        'security/ir.model.access.csv'
     ]
 }
