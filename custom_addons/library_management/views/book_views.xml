@@ -7,9 +7,9 @@
         <field name="name">library.book.tree</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
-        <tree>
-            <field name="title" />
-        </tree>
+            <tree>
+                <field name="title" />
+            </tree>
         </field>
     </record>
 
@@ -18,14 +18,28 @@
         <field name="name">library.book.form</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
-        <form>
-            <sheet>
-                <group>
-                </group>
-                <field name="title" />
-            </sheet>
-        </form>
+            <form>
+                <sheet>
+                    <group>
+                    </group>
+                    <field name="title" />
+                </sheet>
+            </form>
         </field>
     </record>
+
+    <!-- Action -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree, form</field>
+    </record>
+
+    <!-- Main menu and submenu Item -->
+    <menuitem id="menu_library_root" name="Library" />
+
+    <!-- Sub Menu -->
+    <menuitem id="menu_library_books" name="Books" parent="menu_library_root"
+        action="action_library_book" />
 
 </odoo>
